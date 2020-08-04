@@ -1,0 +1,6 @@
+framework module Pods_Book_Seeker {
+  umbrella header "Pods-Book Seeker-umbrella.h"
+
+  export *
+  module * { export * }
+}
