@@ -33,21 +33,14 @@ class BookViewModel: NSObject {
 
 extension BookViewModel: UITableViewDelegate  {
     
-// func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//     return 100.0
-// }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140.0
+    }
 
- func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     return 140.0
- }
- 
-// func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//     return nil
-// }
- 
- func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     tableView.deselectRow(at: indexPath, animated: true)
-}
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension BookViewModel: UITableViewDataSource {
@@ -55,7 +48,7 @@ extension BookViewModel: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let book = BookViewModel.shared.bookList {
             return book.resultCount
@@ -65,14 +58,14 @@ extension BookViewModel: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
-            cell.selectionStyle = .none
-            let bookDetails = BookViewModel.shared.bookList
-            cell.book = bookDetails?.results[indexPath.row]
-            return cell
+        if let bookDetails = BookViewModel.shared.bookList, bookDetails.resultCount > 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath) as? BookTableViewCell {
+                cell.selectionStyle = .none
+                cell.book = bookDetails.results[indexPath.row]
+                return cell
+            }
         }
         return UITableViewCell()
     }
-    
-    
+
 }

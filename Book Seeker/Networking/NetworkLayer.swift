@@ -49,14 +49,10 @@ class APIRequest {
                     }
             
                     var request = URLRequest(url: url)
-                    //request.setValue(TOKEN, forHTTPHeaderField: "token")
-                    //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                     request.httpMethod = HTTPMethod.get.rawValue
                     request.cachePolicy = .reloadIgnoringLocalCacheData
                     Network.requestConnection(request:request, completion: completionHandler)
-            
-          
-            
+     
     }
         
 }

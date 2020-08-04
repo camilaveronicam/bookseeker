@@ -47,8 +47,6 @@ class BookListViewController: UIViewController {
             
             DispatchQueue.main.async {
                 
-               // LoadingView.shared.stopLoading()
-                
                 switch response {
                 case .Success(let providers):
                     
@@ -63,7 +61,6 @@ class BookListViewController: UIViewController {
             }
         }
         
-        //LoadingView.shared.startLoading(with:"")
         BookViewModel.listBooks(completion: completionHandler)
     }
 }

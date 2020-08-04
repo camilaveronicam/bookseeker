@@ -55,6 +55,4 @@ class BookDetail: Decodable {
         case averageUserRating
         case userRatingCount
     }
-    
-    
 }

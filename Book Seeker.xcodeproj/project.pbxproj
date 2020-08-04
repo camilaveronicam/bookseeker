@@ -99,7 +99,6 @@
 				8652EF4724D9945900599A65 /* View */,
 				8652EF4A24D9949700599A65 /* ViewModel */,
 				8652EF4524D9943F00599A65 /* Custom Cells */,
-				8652EF4624D9944B00599A65 /* Custom View */,
 				8652EF4424D9941000599A65 /* Networking */,
 				8652EF4324D993FC00599A65 /* Supporting Files */,
 			);
@@ -138,13 +137,6 @@
 				863E2DAE24D8C7D40035BDD2 /* BookTableViewCell.xib */,
 			);
 			path = "Custom Cells";
-			sourceTree = "<group>";
-		};
-		8652EF4624D9944B00599A65 /* Custom View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Custom View";
 			sourceTree = "<group>";
 		};
 		8652EF4724D9945900599A65 /* View */ = {

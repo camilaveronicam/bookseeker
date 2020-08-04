@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 typealias NetworkCompletionHandler = (Data?, URLResponse?, Error?) -> Void
+
 class Network {
     static func requestConnection(request: URLRequest,
                                   completion: @escaping (Response<Data, Error>) -> Void) {

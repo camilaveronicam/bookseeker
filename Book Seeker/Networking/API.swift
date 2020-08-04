@@ -12,9 +12,4 @@ import Foundation
 /* GET */
 let  baseURL =  "https://itunes.apple.com/search?term=swift&entity=ibook"
 
-func endpointForURL(_ url:String) -> String {
-    
-    return baseURL + url
-    
-}
 
